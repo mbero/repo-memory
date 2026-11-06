@@ -1,0 +1,9 @@
+---
+mode: agent
+description: Follow the incident response procedure
+---
+
+Follow the procedure in [`.agents/procedures/incident-playbook.md`](../../.agents/procedures/incident-playbook.md).
+
+Read the whole file first, then execute every step in order. Do not skip a step
+because it looks unnecessary. If a step cannot be completed, say which one and why.

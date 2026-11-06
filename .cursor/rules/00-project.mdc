@@ -1,0 +1,14 @@
+---
+description: Canonical project rules for every agent
+alwaysApply: true
+---
+
+Read `AGENTS.md` in the repository root before you do anything else.
+It is the single source of project rules for all AI agents here.
+
+Short version:
+
+- Never commit, push, or create a branch without an explicit request.
+- Verify every fact and cite `file:line`, a config key, or the exact log line.
+- Search `docs/knowledge/`, `docs/decisions/`, and `docs/context/` before you read the code.
+- Write documentation in {{DOC_LANGUAGE}}, with the frontmatter block from `docs/README.md`.

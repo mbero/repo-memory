@@ -1,0 +1,15 @@
+---
+description: When to follow a project procedure
+alwaysApply: true
+---
+
+This project keeps tool-neutral procedures in `.agents/procedures/`.
+Read the matching file and follow every step when its trigger fires.
+
+| Trigger | Procedure |
+|---|---|
+| You gave a substantive technical answer | `save-knowledge.md` |
+| A choice was made between real options | `write-adr.md` |
+| The session is ending or the context is long | `session-handoff.md` |
+| Something failed in a running environment | `incident-playbook.md` |
+| You finished a code change | `pre-commit-review.md` |

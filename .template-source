@@ -1,0 +1,4 @@
+This file marks the template repository itself.
+bootstrap/init.sh does not copy it, so an installed project does not have it.
+bootstrap/check.sh uses it to skip the "unfilled placeholder" check here,
+because an unfilled placeholder is the correct state of the template.

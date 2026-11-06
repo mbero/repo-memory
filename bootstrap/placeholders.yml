@@ -1,0 +1,88 @@
+# Placeholders filled by bootstrap/init.sh.
+# bootstrap/check.sh fails while any {{TOKEN}} remains in the project.
+#
+# Format:
+#   TOKEN:
+#     prompt:   question shown during init
+#     example:  shown as a hint
+#     default:  used when the answer is empty ("" means required)
+
+PROJECT_NAME:
+  prompt: "Project name"
+  example: "order-service"
+  default: ""
+
+PROJECT_SLUG:
+  prompt: "Short slug used in tables"
+  example: "orders"
+  default: ""
+
+PROJECT_PURPOSE:
+  prompt: "One sentence: what does this project do"
+  example: "Calculates and exposes order totals for the checkout flow."
+  default: ""
+
+TECH_STACK:
+  prompt: "Technology stack"
+  example: "Spring Boot 3, PostgreSQL, Kafka"
+  default: ""
+
+LANGUAGE_VERSION:
+  prompt: "Language and version"
+  example: "Java 21"
+  default: ""
+
+PACKAGE_ROOT:
+  prompt: "Package root or namespace"
+  example: "com.example.orders"
+  default: "n/a"
+
+CODE_OWNER:
+  prompt: "Owning team"
+  example: "Checkout team"
+  default: ""
+
+REPO_URL:
+  prompt: "Repository URL"
+  example: "https://github.com/example/order-service"
+  default: ""
+
+DEFAULT_BRANCH:
+  prompt: "Default branch"
+  example: "main"
+  default: "main"
+
+DOC_LANGUAGE:
+  prompt: "Documentation language"
+  example: "English"
+  default: "English"
+
+BUILD_COMMAND:
+  prompt: "Build command"
+  example: "./mvnw clean install"
+  default: ""
+
+RUN_COMMAND:
+  prompt: "Run command"
+  example: "./mvnw spring-boot:run"
+  default: ""
+
+TEST_UNIT_COMMAND:
+  prompt: "Unit test command"
+  example: "./mvnw test"
+  default: ""
+
+TEST_INTEGRATION_COMMAND:
+  prompt: "Integration test command"
+  example: "./mvnw verify"
+  default: "n/a"
+
+LINT_COMMAND:
+  prompt: "Lint or format command"
+  example: "./mvnw spotless:apply"
+  default: "n/a"
+
+TICKET_PREFIX:
+  prompt: "Ticket key prefix (Jira profile only)"
+  example: "PROJ"
+  default: "n/a"
