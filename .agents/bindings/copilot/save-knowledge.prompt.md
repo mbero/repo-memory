@@ -1,5 +1,5 @@
 ---
-mode: agent
+agent: agent
 description: Save the last answer into the knowledge base
 ---
 

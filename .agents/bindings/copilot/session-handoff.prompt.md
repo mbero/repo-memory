@@ -1,5 +1,5 @@
 ---
-mode: agent
+agent: agent
 description: Write the session handoff entry
 ---
 

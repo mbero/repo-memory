@@ -1,6 +1,10 @@
 # Placeholders filled by bootstrap/init.sh.
 # bootstrap/check.sh fails while any {{TOKEN}} remains in the project.
 #
+# init.sh detects a value from the project where it can. It asks only for a
+# value that it cannot detect and that has no default. Pass --set TOKEN=VALUE
+# to supply a value on the command line.
+#
 # Format:
 #   TOKEN:
 #     prompt:   question shown during init
@@ -64,7 +68,7 @@ BUILD_COMMAND:
 
 RUN_COMMAND:
   prompt: "Run command"
-  example: "./mvnw spring-boot:run"
+  example: "make run"
   default: ""
 
 TEST_UNIT_COMMAND:
@@ -81,6 +85,11 @@ LINT_COMMAND:
   prompt: "Lint or format command"
   example: "./mvnw spotless:apply"
   default: "n/a"
+
+SOURCE_GLOBS:
+  prompt: "Source folders, as a comma list of globs"
+  example: "src/**,lib/**"
+  default: "src/**"
 
 TICKET_PREFIX:
   prompt: "Ticket key prefix (Jira profile only)"

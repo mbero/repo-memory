@@ -64,7 +64,7 @@ tags: [checkout, payments]
 | `type` | One of the seven values. It must match the folder. |
 | `status` | `draft` means unverified. `superseded` must name the replacement in the body. |
 | `updated` | Change it on every substantive edit, not on a typo fix. |
-| `sources` | At least one entry, unless the file is a README or a template. |
+| `sources` | At least one entry, unless the file is a README or a template. A repository path must exist: `bootstrap/check.sh` fails on a path that the code no longer has. |
 | `tags` | Lower case, kebab-case, no more than five. |
 
 ---
@@ -82,12 +82,17 @@ tags: [checkout, payments]
 6. **One topic per file.** Split a file that answers two questions.
 7. **Date every claim that can expire.** A version number, a branch, or a
    measurement needs the date it was true.
+8. **One fact, one home.** Write a fact in one document and link to it from
+   the others. Two copies of a fact become two different facts.
+9. **Change the document with the code.** A code change that makes a document
+   wrong updates that document in the same change.
 
 ---
 
 ## Before you explore the code
 
-1. List the files in `knowledge/`, `decisions/`, and `context/`.
+1. Read [`INDEX.md`](INDEX.md). It lists every document with its title, type,
+   status, and date. `bootstrap/check.sh --index` generates it.
 2. Read the matching file and use it as the primary source.
 3. Explore the code only when no document answers the question.
 

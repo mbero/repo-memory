@@ -34,6 +34,8 @@ are stubs. They point to this file. Never duplicate content into them.
 5. **Write all documentation in {{DOC_LANGUAGE}}.**
 6. **Use repository-relative paths.** Never write the absolute path of one machine.
 7. **Report what you skipped.** A partial result with a stated gap beats a silent gap.
+8. **Change the document with the code.** A code change that makes a document
+   in `docs/` wrong updates that document in the same change.
 
 ---
 
@@ -41,9 +43,9 @@ are stubs. They point to this file. Never duplicate content into them.
 
 Follow these three steps for every technical question.
 
-1. **List** the files in `docs/knowledge/`, `docs/decisions/`, and `docs/context/`.
-   A file listing is cheap. A codebase scan is not.
-2. **Read** only the files whose name matches the question. Use them as the primary source.
+1. **Read** `docs/INDEX.md`. It lists every document with its title, type,
+   status, and date. One file read is cheap. A codebase scan is not.
+2. **Read** only the documents whose title matches the question. Use them as the primary source.
 3. **Explore the code** only when no document answers the question.
 
 Search order when more than one document could match:
@@ -71,6 +73,7 @@ Do not read every file at the start of a session. Read a file when its trigger f
 | `docs/context/conventions.md` | You write or modify any code in this repository |
 | `docs/context/local-setup.md` | The build fails, the application fails to start, or the IDE import fails |
 | `docs/context/toolchain.md` | You need the exact build, test, or lint command |
+| `docs/context/domain.md` | The question is about a business rule, an actor, or a process |
 | `docs/context/glossary.md` | A domain term appears that you cannot define |
 | `docs/context/ecosystem.md` | The question crosses a repository boundary |
 | `docs/sessions/history.md` | **Always, at the start of a session** |
@@ -82,6 +85,7 @@ Do not read every file at the start of a session. Read a file when its trigger f
 | You produced | Write it to | Format rules |
 |---|---|---|
 | An answer to "how does X work" | `docs/knowledge/<topic>.md` | `docs/knowledge/README.md` |
+| A business rule, an actor, or a process | `docs/context/domain.md` | Mark it `inferred` until a person confirms it |
 | A decision and its reasons | `docs/decisions/NNNN-<slug>.md` | `docs/decisions/README.md` |
 | An incident analysis or a diagnostic playbook | `docs/lessons-learned/<area>-<topic>.md` | `docs/lessons-learned/README.md` |
 | A list of things that must be done | `docs/todo/<area>-<goal>.md` | `docs/todo/README.md` |
@@ -90,6 +94,7 @@ Do not read every file at the start of a session. Read a file when its trigger f
 
 Every file under `docs/` starts with the YAML frontmatter block defined in
 [`docs/README.md`](docs/README.md). A file without frontmatter fails `bootstrap/check.sh`.
+Run `bootstrap/check.sh --index` after you add, rename, or retitle a document.
 
 **Ask before you write.** End a substantive answer with one line:
 `Save this to docs/<folder>/? ` Do not ask after a meta question, a file
@@ -107,14 +112,16 @@ operation, or a session-management request.
 **Before the session ends, or when the context grows long:**
 
 Run the handoff procedure in [`.agents/procedures/session-handoff.md`](.agents/procedures/session-handoff.md).
-It appends a structured entry to `docs/sessions/history.md`.
+It adds a structured entry to `docs/sessions/history.md` and keeps that file
+at ten entries. Older entries move to `docs/sessions/archive/`.
 
 ---
 
 ## 7. Procedures
 
 These are tool-neutral. Any agent can read and follow them. A tool-specific
-wrapper, if one exists, lives in `.agents/bindings/<tool>/`.
+wrapper, if one exists, lives in the folder of that tool, for example
+`.github/prompts/`.
 
 | Procedure | Use it when |
 |---|---|
@@ -123,6 +130,7 @@ wrapper, if one exists, lives in `.agents/bindings/<tool>/`.
 | [`session-handoff.md`](.agents/procedures/session-handoff.md) | The session ends or the context fills |
 | [`incident-playbook.md`](.agents/procedures/incident-playbook.md) | Something broke in a running environment |
 | [`pre-commit-review.md`](.agents/procedures/pre-commit-review.md) | You finished a code change |
+| [`first-fill.md`](.agents/procedures/first-fill.md) | `docs/context/` still holds empty templates |
 
 ---
 
@@ -136,6 +144,7 @@ wrapper, if one exists, lives in `.agents/bindings/<tool>/`.
 | Integration tests | `{{TEST_INTEGRATION_COMMAND}}` |
 | Lint / format | `{{LINT_COMMAND}}` |
 | Knowledge-base check | `bootstrap/check.sh` |
+| Knowledge-base index | `bootstrap/check.sh --index` |
 
 ---
 

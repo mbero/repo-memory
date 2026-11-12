@@ -14,7 +14,7 @@ inline, because Copilot gives this path a higher precedence than `AGENTS.md`.
 
 ## Before you answer a technical question
 
-1. List the files in `docs/knowledge/`, `docs/decisions/`, and `docs/context/`.
+1. Read `docs/INDEX.md`. It lists every document with its title and status.
 2. Read the matching document and use it as the primary source.
 3. Explore the code only when no document answers the question.
 

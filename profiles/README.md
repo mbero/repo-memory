@@ -17,25 +17,25 @@ So the core stays small, and a profile carries the specialised rules.
 |---|---|
 | [`kafka.md`](kafka.md) | The project consumes or publishes Kafka topics |
 | [`monolith-extraction.md`](monolith-extraction.md) | The project extracts areas out of a monolith |
-| [`spring-boot.md`](spring-boot.md) | The project is a Spring Boot service |
-| [`frontend.md`](frontend.md) | The project contains a web frontend |
 | [`obsidian.md`](obsidian.md) | The team browses `docs/` in Obsidian |
 | [`jira.md`](jira.md) | The team uses Jira, and the agent writes ticket text |
 
 ## Enabling
 
-`bootstrap/init.sh` asks which profiles to enable. It records them in
-`.agents/manifest.yml` and writes the links between the `PROFILES` markers in
-`AGENTS.md`.
+`bootstrap/init.sh --profiles kafka,jira` copies the selected profiles into the
+project and writes the links between the `PROFILES` markers in `AGENTS.md`.
+A profile that the project did not select stays in the template repository.
 
 To enable one later:
 
-1. Add its name to `profiles:` in `.agents/manifest.yml`.
+1. Copy its file from the template repository into `profiles/`.
 2. Add a link to it inside the `<!-- PROFILES:START -->` block in `AGENTS.md`.
 
 ## Writing a new profile
 
 - One subject per file.
-- Rules only. No project facts — those belong in `docs/context/`.
+- Rules for the knowledge base only. No project facts — those belong in
+  `docs/context/`. No coding style guide — that belongs in
+  `docs/context/conventions.md`.
 - State the trigger in the first line: *"Read this when you ..."*.
 - Keep it under 80 lines. A long profile is a document, not a rule set.

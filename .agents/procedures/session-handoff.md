@@ -34,7 +34,12 @@ from `docs/sessions/history.md` alone.
 
 9. **Update `updated:` in the frontmatter.**
 
-10. **Do not commit.** Leave the change in the working tree.
+10. **Rotate the log.** Keep the ten newest entries in `history.md`. Move each
+    older entry, unchanged, to `docs/sessions/archive/YYYY.md`, where `YYYY`
+    is the year of the entry. Give a new archive file the frontmatter block
+    from `docs/README.md` with `type: context`.
+
+11. **Do not commit.** Leave the change in the working tree.
 
 ## What does not belong in the handoff
 

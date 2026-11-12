@@ -19,3 +19,4 @@ applyTo: "docs/**/*.md"
 5. End the file with a section that names what you could not verify.
 6. Use standard Markdown links. Do not use `[[wikilinks]]` unless the Obsidian profile is enabled.
 7. Write in {{DOC_LANGUAGE}}.
+8. Run `bootstrap/check.sh --index` after you add, rename, or retitle a document.

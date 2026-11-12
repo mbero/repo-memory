@@ -13,3 +13,4 @@ Read the matching file and follow every step when its trigger fires.
 | The session is ending or the context is long | `session-handoff.md` |
 | Something failed in a running environment | `incident-playbook.md` |
 | You finished a code change | `pre-commit-review.md` |
+| `docs/context/` still holds empty templates | `first-fill.md` |

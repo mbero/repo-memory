@@ -36,6 +36,8 @@ debt, making a deliberate exception to a convention.
 
 10. **Set the status.** `proposed` until the deciders agree, then `accepted`.
 
+11. **Refresh the index.** Run `bootstrap/check.sh --index`.
+
 ## Superseding an earlier ADR
 
 1. Write the new ADR. Fill its `Supersedes` field.

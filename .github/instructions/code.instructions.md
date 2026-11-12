@@ -1,5 +1,5 @@
 ---
-applyTo: "src/**,lib/**,app/**"
+applyTo: "{{SOURCE_GLOBS}}"
 ---
 
 # Writing code in this repository
@@ -9,7 +9,8 @@ applyTo: "src/**,lib/**,app/**"
 3. Do not write a fully qualified class name in a method body. Import it.
 4. Add a test for every new unit of observable behaviour.
 5. Review error handling before you hand the change over.
-6. Run `{{LINT_COMMAND}}` and `{{TEST_UNIT_COMMAND}}` before you report completion.
-7. Never commit or push without an explicit request.
+6. Run the lint command and the unit test command from `AGENTS.md` before you report completion.
+7. Update the document in `docs/` that the change makes wrong, in the same change.
+8. Never commit or push without an explicit request.
 
 Full checklist: `.agents/procedures/pre-commit-review.md`.

@@ -29,11 +29,8 @@ decision.
    behaviour needs a test: an endpoint, a filter, a repository query, an
    exception handler, a scheduled job. A pure data holder does not.
 
-5. **Run the commands.**
-   ```
-   {{LINT_COMMAND}}
-   {{TEST_UNIT_COMMAND}}
-   ```
+5. **Run the commands.** Take the lint command and the unit test command from
+   the toolchain table in `AGENTS.md`. Run both.
    Report the real result. A failing test is a result, not a reason to stay quiet.
 
 6. **Check the conventions.** Read `docs/context/conventions.md` and confirm the
@@ -42,10 +39,12 @@ decision.
 7. **Update the knowledge base when the change invalidates it.**
    - A changed boundary or data flow → `docs/context/architecture.md`.
    - A new command → `docs/context/toolchain.md`.
+   - A changed business rule or actor → `docs/context/domain.md`.
    - A decision made along the way → an ADR.
    - A document that is now wrong → fix it or mark it `status: superseded`.
 
-8. **Run `bootstrap/check.sh`** if you touched anything under `docs/`.
+8. **Run `bootstrap/check.sh --index`, then `bootstrap/check.sh`,** if you
+   touched anything under `docs/`.
 
 9. **Report.** State what changed, what you verified, what you did not verify,
    and which files are in the working tree.

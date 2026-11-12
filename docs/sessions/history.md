@@ -26,6 +26,9 @@ Procedure: [`.agents/procedures/session-handoff.md`](../../.agents/procedures/se
    `AuthFilter.java:88`, confirmed the token is validated twice" is useful.
 4. **An open question must name who or what can answer it.**
 5. Keep the newest entry at the top.
+6. **Keep ten entries here.** The handoff procedure moves an older entry,
+   unchanged, to `archive/YYYY.md`. Every session reads this file, so its
+   size is a cost that every session pays.
 
 ---
 

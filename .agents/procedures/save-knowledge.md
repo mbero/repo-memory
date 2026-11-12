@@ -36,7 +36,9 @@ session command.
 
 8. **End with the gap.** The last section names what you could not verify.
 
-9. **Confirm in one line.** State the path you wrote. Do not restate the content.
+9. **Refresh the index.** Run `bootstrap/check.sh --index`.
+
+10. **Confirm in one line.** State the path you wrote. Do not restate the content.
 
 ## Quality bar
 
